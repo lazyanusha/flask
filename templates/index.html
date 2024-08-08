@@ -2,10 +2,19 @@
 
 
 {% block content %}
-    <h1>Hello</h1>
-    {{ cras[1] }}
-    <div class="box">
-        
-    </div>
+    <h1>Recent Posts</h1>
+{% for post in posts %}
+    <article class="article-cards">
+        <div class="card" style="width: 20rem;">
+            <img src="{{ url_for('static', filename='images/snufkin.webp') }}" class="card-img-top" alt="image">
+            <div class="card-body">
+              <h5 class="card-title">{{ post.title }}</h5>
+              <p class="card-text">{{ post.author }}</p>
+              <p class="card-text">{{ post.content }}</p>
+              <a href="#" class="btn btn-success">Read More</a>
+            </div>
+          </div>
+    </article>
+{% endfor %}
 
 {% endblock %}

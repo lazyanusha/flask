@@ -30,11 +30,19 @@ class Form(FlaskForm):
     name = StringField("What's your name?", validators=[DataRequired()])
     submit = SubmitField("Submit")
 
+
+
+posts = [
+    {"title": "First Post", "author": "Author 1", "content": "This is the content of the first post."},
+    {"title": "Second Post", "author": "Author 2", "content": "This is the content of the second post."},
+    {"title": "Third Post", "author": "Author 3", "content": "This is the content of the third post."},
+    {"title": "Fourth Post", "author": "Author 4", "content": "This is the content of the fourth post."}
+]
+
 # Create routes
 @app.route('/')
 def index():
-    cras = ["abc", "def"]
-    return render_template('index.html', cras=cras)
+    return render_template('index.html', posts =posts)
 
 @app.route('/user/<name>')
 def user(name):

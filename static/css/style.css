@@ -13,3 +13,17 @@ p{
     font-size: 20px;
     color: darkred;
 }
+
+.card img{
+    object-fit: cover;
+    height: 250px;
+    object-position: top;
+    
+}
+
+
+.article-cards{
+    display: inline-flex;
+    column-gap: 30px;
+    justify-content: center;
+}
